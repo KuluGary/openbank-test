@@ -1,0 +1,35 @@
+{
+    "wizard": {
+        "header": "Welcome to your OpenClose Account",
+        "step1": {
+            "protect_password": "Save your password, data or any other information, forget about paper notes and unsafe apps.",
+            "master_key": "Create your master key: only you will be able to access your secrets with it.",
+            "how_it_works_header": "How it works",
+            "how_it_works": "In the first place, you must create a password for each of your own electronic belonging. You cannot recover this password, so remember it well.",            
+            "which_data_header": "Which data to save",
+            "which_data": "For example, your card number, the PIN and PUK of your cellphone, the serial number of any of your devices or any information you need to store safely",
+            "checkbox": "Do you accept the terms of service and allow for us to use your data?"
+        },
+        "step2": {
+            "how_it_works": "In the first place, you must create a password for each of your own electronic belonging. You cannot recover this password, so remember it well.",
+            "create_pass_label": "Create your master key",
+            "pass_error_match": "The passwords do not match",
+            "pass_error_regex": "The password must have a minimum of 8 characters, a maximum of 24, a uppercase and a number.",
+            "repeat_pass": "Repeat your password",
+            "hint_explanation": "You can also create a hint to remember your master key.",
+            "hint_label": "Create your hint to remember your password (optional)"
+        },
+        "step3": {
+            "success_header": "Your Password Manager has been created",
+            "success": "lorem ipsum dolor sit",
+            "warning_header": "There has been a problem",
+            "warning": "We couldn't create your password manager. Please try again."
+        },
+        "buttons": {
+            "back": "Back",
+            "next": "Next",
+            "cancel": "Cancel",
+            "submit": "Submit"
+        }
+    }
+}

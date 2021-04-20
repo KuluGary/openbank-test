@@ -1,0 +1,14 @@
+.step3 {
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: center;
+
+    &-wrapper-image-container {
+        display: flex;
+        align-items: center;
+    }
+    img {
+        max-width: 5rem;
+        margin: 0 2rem;
+    }
+}

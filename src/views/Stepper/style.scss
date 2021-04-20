@@ -1,0 +1,25 @@
+@import "../../styles/base";
+
+div.stepper {
+    background-color: #CCD5DA;
+    &-container {
+        background: transparent;
+        max-width: 40%;
+        margin: 0 auto;
+    }
+
+    .MuiStepIcon-root {
+        color: #788F9C;
+    }
+    
+    .MuiStepIcon-completed {
+        color: $primary-color;
+    }
+    
+    .MuiStepIcon-active {
+        color: $secondary-color;
+        width: 1.5em;
+        height: 1.5em;
+        transition: width .2s, height .2s;
+    }
+}
