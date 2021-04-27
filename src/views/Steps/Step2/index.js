@@ -60,7 +60,7 @@ export default function Step2() {
                     <div className="step2-wrapper-field">
                         <TextField
                             fullWidth
-                            error={passwordError}
+                            error={!!passwordError}
                             label={t("wizard.step2.create_pass_label")}
                             variant="outlined"
                             color="secondary"

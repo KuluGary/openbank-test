@@ -18,11 +18,11 @@ export default function Buttons({ activeStep, handleBack, handleNext }) {
     const { password, passwordError, passwordHintError } = useSelector(state => state.password);
 
     const step1Validator = () => {
-        return terms;
+        return !!terms;
     }
 
     const step2Validator = () => {        
-        return password.length <= 0 || passwordError || passwordHintError;
+        return !!(password.length <= 0 || passwordError || passwordHintError);
     }
 
     switch (activeStep) {
