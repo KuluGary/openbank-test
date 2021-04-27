@@ -6,6 +6,9 @@ body {
   
   .App {
     background-color: transparent;
+    p {
+      text-align: justify;
+    }
     
     &::after {
       content: "";
