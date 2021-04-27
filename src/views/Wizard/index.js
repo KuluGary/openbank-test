@@ -5,6 +5,7 @@ import Step1 from "../Steps/Step1";
 import Step2 from "../Steps/Step2";
 import Step3 from "../Steps/Step3";
 import Buttons from "../Buttons";
+import { useHistoryState } from "hocs/useHistoryState";
 import "./style.scss";
 
 /**
@@ -13,7 +14,7 @@ import "./style.scss";
  */
 export default function Wizard() {
     const steps = [Step1, Step2, Step3];
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = useHistoryState("step", 0);
     const SelectedComponent = steps[activeStep];
 
     const handleNext = () => {

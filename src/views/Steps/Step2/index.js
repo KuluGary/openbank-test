@@ -44,7 +44,7 @@ export default function Step2() {
     const handleHintChange = (e) => {
         dispatch(setPasswordHint(e.target.value));
 
-        if (passwordHint.length <= maxPasswordHintLength) {
+        if (e.target.value.length <= maxPasswordHintLength) {
             dispatch(setPasswordHintError(false));
         } else {
             dispatch(setPasswordHintError(true));
