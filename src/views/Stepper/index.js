@@ -1,6 +1,7 @@
-import React from 'react';
-import { Stepper as MUIStepper, Step, StepLabel } from '@material-ui/core';
-import "./style.scss";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Stepper as MUIStepper, Step, StepLabel } from '@material-ui/core'
+import './style.scss'
 
 /**
  * Component that creates and controls the steps
@@ -10,12 +11,12 @@ import "./style.scss";
  */
 const Stepper = ({ activeStep, steps }) => (
     <div className="stepper" data-testid="stepper">
-        <MUIStepper            
+        <MUIStepper
             activeStep={activeStep}
-            classes={{ root: "stepper-container" }}>
+            classes={{ root: 'stepper-container' }}>
             {steps.map((_, index) => (
-                <Step 
-                    key={index} 
+                <Step
+                    key={index}
                     data-testid="step">
                     <StepLabel />
                 </Step>
@@ -24,4 +25,9 @@ const Stepper = ({ activeStep, steps }) => (
     </div>
 )
 
-export default Stepper;
+Stepper.propTypes = {
+  activeStep: PropTypes.number,
+  steps: PropTypes.array
+}
+
+export default Stepper
