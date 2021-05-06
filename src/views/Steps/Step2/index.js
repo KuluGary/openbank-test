@@ -2,9 +2,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { TextField, IconButton, InputAdornment } from '@material-ui/core'
 import { Visibility, VisibilityOff } from '@material-ui/icons'
+import { checkPassword } from 'services/string-util';
 import { useTranslation } from 'react-i18next'
 import {
-  setPassword, setPasswordHint, setPasswordError, setPasswordHintError
+  setPassword, setPasswordHint, setPasswordError
 } from 'store/password'
 import './style.scss'
 
@@ -12,7 +13,7 @@ import './style.scss'
  * Function component for rendering the first step
  * of the wizard
  */
-export default function Step2 () {
+export default function Step2 ({ setValidator }) {
   const dispatch = useDispatch()
   const { t } = useTranslation()
   const {
@@ -23,32 +24,41 @@ export default function Step2 () {
   const [showPassword, setShowPassword] = React.useState(false)
   const [passwordCheck, setPasswordCheck] = React.useState('')
   const maxPasswordHintLength = 255
-  const passwordRegex = /^[a-zA-Z0-9]{8,24}$/
 
+  // Set default state of current validator to false
+  React.useEffect(() => setValidator(false), [setValidator])
+
+  // Error handling
   React.useEffect(() => {
     if (password.length > 0 || passwordCheck.length > 0) {
       let errorMessage = null
-      if (password !== passwordCheck) {
-        errorMessage = t('wizard.step2.pass_error_match')
-      } else if (!passwordRegex.test(password)) {
+      let error = false;
+
+      // Manage validation for passwords
+      if (!checkPassword(password)) {
         errorMessage = t('wizard.step2.pass_error_regex')
+        error = true
+      } else if (!passwordCheck) {
+        errorMessage = t('wizard.step2.pass_error_match')
+        error = true
+      } else if (password !== passwordCheck) {
+        errorMessage = t('wizard.step2.pass_error_match')
+        error = true
+      }
+      
+      // Manage validation for hints
+      if (passwordHint.length > maxPasswordHintLength) {
+        error = true
       }
 
       dispatch(setPasswordError(errorMessage))
+      setValidator(!error)
     }
-  }, [password, passwordCheck, dispatch, passwordRegex, t])
+  }, [password, passwordCheck, dispatch, t, setValidator, passwordHint])
 
   const handlePasswordChange = (e) => dispatch(setPassword(e.target.value))
 
-  const handleHintChange = (e) => {
-    dispatch(setPasswordHint(e.target.value))
-
-    if (e.target.value.length <= maxPasswordHintLength) {
-      dispatch(setPasswordHintError(false))
-    } else {
-      dispatch(setPasswordHintError(true))
-    }
-  }
+  const handleHintChange = (e) => dispatch(setPasswordHint(e.target.value))
 
   return (
     <div className="step2">

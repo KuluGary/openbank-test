@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@material-ui/core'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
@@ -12,18 +11,10 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
  * @param {Function} handleBack - handler function for backward navigation
  * @param {Function} handleNext - handler function for forward navigation
  */
-export default function Buttons ({ activeStep, handleBack, handleNext }) {
+export default function Buttons ({ activeStep, handleBack, handleNext, validator }) {
   const { t } = useTranslation()
-  const { terms } = useSelector(state => state.terms)
-  const { password, passwordError, passwordHintError } = useSelector(state => state.password)
 
-  const step1Validator = () => {
-    return !!terms
-  }
-
-  const step2Validator = () => {
-    return !!(password.length <= 0 || passwordError || passwordHintError)
-  }
+  console.log("Is disabled?: ", !validator)
 
   switch (activeStep) {
     case 0:
@@ -36,7 +27,7 @@ export default function Buttons ({ activeStep, handleBack, handleNext }) {
                 data-testid="right-button"
                 variant="contained"
                 color="secondary"
-                disabled={!step1Validator()}
+                disabled={!validator}
                 onClick={handleNext}
             >
                 <>
@@ -55,7 +46,7 @@ export default function Buttons ({ activeStep, handleBack, handleNext }) {
             <Button
                 variant="contained"
                 color="secondary"
-                disabled={step2Validator()}
+                disabled={!validator}
                 onClick={handleNext}
                 data-testid="right-button"
             >

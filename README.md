@@ -17,3 +17,7 @@ En lugar de utilizar Redux plano o con otros middlewares, se ha decidido utiliza
 - Redux requiere bastante código repetitivo.
 
 Debido a las constricciones de tiempo, se ha optado por Redux Toolkit. En otras circunstancias, se podría haber planteado el uso de `redux-thunk`, por ejemplo.
+
+### ESLint
+
+Se ha optado por no utilizar un ESLint instalado como librería, y en su lugar hacer uso de ESLint como extensión del IDE de elección (en mi caso, VSC). Esto es debido a que para hacerlo y personalizar los parámetros de ESLint se ha de hacer `eject` de CRA y manejar las dependencias manualmente, lo cual no parece necesario para un linter.

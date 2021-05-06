@@ -2,6 +2,8 @@
 
 div.stepper {
     background-color: #CCD5DA;
+    min-height: 6rem;
+
     &-container {
         background: transparent;
         max-width: 40%;
@@ -21,5 +23,38 @@ div.stepper {
         width: 1.5em;
         height: 1.5em;
         transition: width .2s, height .2s;
+    }
+    
+
+    .MuiStep-horizontal {
+        padding: 0;
+
+        .MuiStepLabel-iconContainer {
+            padding: 0
+        }
+    }
+
+    .MuiStepConnector-line {
+        border-top-width: 3px;
+    }
+
+    .Mui-disabled {        
+        .MuiStepConnector-line {
+            border-color: #788F9C;
+        }
+    }
+
+    .MuiStepConnector-active {        
+        .MuiStepConnector-line {
+            border-top-width: 3px;
+            border-color: $primary-color;
+        }
+    }
+
+    .MuiStepConnector-completed {        
+        .MuiStepConnector-line {
+            border-top-width: 3px;
+            border-color: $primary-color;
+        }
     }
 }
