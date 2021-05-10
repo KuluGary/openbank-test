@@ -1,0 +1,30 @@
+.step1 {
+    padding: 1.5rem 3rem;
+    min-height: 55vh;
+    
+    &-wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &-image-container {
+            max-width: 35%;
+            text-align: justify;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
