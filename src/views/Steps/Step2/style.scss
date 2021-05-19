@@ -1,0 +1,30 @@
+.step2 {
+    padding: 1.5rem 3rem;
+    min-height: 55vh;
+    
+    &-wrapper {
+        &:last-child {
+            margin: 3rem 0;
+        }
+        &-flex {
+            max-width: 90%;
+            display: flex;
+            @media (max-width: 1020px) {
+                max-width: 100%;
+                display: block;
+                margin: 0;
+            }
+        }
+
+        &-field {
+            @media (max-width: 1020px) {
+                width: 100%;
+            }
+            width: 35%;
+
+            &:first-of-type {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
