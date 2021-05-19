@@ -11,10 +11,6 @@ import { Checkbox, FormControlLabel } from "@material-ui/core";
  */
 const Step1 = ({ validator, setValidator }) => {
   const { t } = useTranslation();
-
-
-
-
   
   // Set default state of current validator to false
   React.useEffect(() => setValidator(false), [setValidator]);

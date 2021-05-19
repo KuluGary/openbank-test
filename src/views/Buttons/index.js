@@ -14,13 +14,11 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 export default function Buttons ({ activeStep, handleBack, handleNext, validator }) {
   const { t } = useTranslation()
 
-  console.log("Is disabled?: ", !validator)
-
   switch (activeStep) {
     case 0:
       return (
         <>
-            <Button data-testid="left-button" onClick={() => console.log('Cancela el wizard')}>
+            <Button data-testid="left-button">
                 {t('wizard.buttons.cancel')}
             </Button>
             <Button

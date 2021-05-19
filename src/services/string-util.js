@@ -1,5 +1,7 @@
 const checkPassword = (password) => {
-  return /[a-zA-Z0-9]{8,24}/.test(password);
+  const strongRegex = new RegExp(/(?=^.{8,32}$)(?=(?:.*?\d){1})(?=.*[a-z])|(?=(?:.*?[!@#$%*()_+^&}{:;?.]){1})(?!.*\s)[0-9a-zA-Z]*$/);
+  
+  return strongRegex.test(password);
 }
 
 export { checkPassword };
