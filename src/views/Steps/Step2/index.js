@@ -61,7 +61,7 @@ export default function Step2 ({ setValidator }) {
   const handleHintChange = (e) => dispatch(setPasswordHint(e.target.value))
 
   return (
-    <div className="step2">
+    <div className="step2" data-testid="step2">
         <h1>{t('wizard.header')}</h1>
         <div className="step2-wrapper">
             <p>{t('wizard.step1.how_it_works')}</p>
@@ -77,6 +77,9 @@ export default function Step2 ({ setValidator }) {
                         onChange={handlePasswordChange}
                         helperText={passwordError || ' '}
                         InputProps={{
+                          inputProps: {
+                            "data-testid": "password-input"
+                          },
                           endAdornment: <InputAdornment position="end">
                                 <IconButton
                                     onClick={() => setShowPassword(!showPassword)}
@@ -95,6 +98,9 @@ export default function Step2 ({ setValidator }) {
                         type={showPassword ? 'text' : 'password'}
                         onChange={(e) => setPasswordCheck(e.target.value)}
                         InputProps={{
+                          inputProps: {
+                            "data-testid": "password-repeat-input"
+                          },
                           endAdornment: <InputAdornment position="end">
                                 <IconButton
                                     onClick={() => setShowPassword(!showPassword)}

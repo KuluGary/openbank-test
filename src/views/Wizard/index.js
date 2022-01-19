@@ -1,10 +1,10 @@
 import React from "react";
 import { Paper, Divider } from "@material-ui/core";
-import Stepper from "../Stepper";
+import Stepper from "../../components/Stepper";
 import Step1 from "../Steps/Step1";
 import Step2 from "../Steps/Step2";
 import Step3 from "../Steps/Step3";
-import Buttons from "../Buttons";
+import Buttons from "../../components/Buttons";
 import { useHistoryState } from "hooks/useHistoryState";
 import "./style.scss";
 

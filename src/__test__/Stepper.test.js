@@ -1,5 +1,5 @@
 import React from 'react'
-import Stepper from 'views/Stepper'
+import Stepper from 'components/Stepper'
 import Step1 from 'views/Steps/Step1'
 import Step2 from 'views/Steps/Step2'
 import Step3 from 'views/Steps/Step3'

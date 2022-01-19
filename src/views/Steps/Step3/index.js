@@ -31,7 +31,7 @@ const Step3 = () => {
 
   if (loading) {
     return (
-            <div className="step3">
+            <div className="step3" data-testid="step3">
                 <CircularProgress
                     color="secondary" />
             </div>
@@ -40,7 +40,7 @@ const Step3 = () => {
 
   if (status > 300) {
     return (
-            <div className="step3">
+            <div className="step3" data-testid="step3">
                 <div className="step3-wrapper">
                     <div className="step3-wrapper-image-container">
                         <img alt="Protect your password" src={warning} />
@@ -55,7 +55,7 @@ const Step3 = () => {
   }
 
   return (
-        <div className="step3">
+        <div className="step3" data-testid="step3">
             <div className="step3-wrapper">
                 <div className="step3-wrapper-image-container">
                     <img alt="Protect your password" src={success} />
